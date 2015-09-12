@@ -2,7 +2,7 @@
 
 namespace Palindrome
 {
-    class Program
+    class Palindrome
     {
         const int SpaceChar = '\u0020';
 
