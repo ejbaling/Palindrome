@@ -11,10 +11,10 @@ namespace Palindrome
             var increasingIndex = 0;
             var decreasingIndex = s.Length - 1;
 
-            var forwardIndexCount = increasingIndex;
-            var reverseIndexCount = decreasingIndex;
+            var forwardIndexPosition = increasingIndex;
+            var reverseIndexPosition = decreasingIndex;
 
-            while (forwardIndexCount <= reverseIndexCount)
+            while (forwardIndexPosition <= reverseIndexPosition)
             {
                 var a = s[increasingIndex];
                 var b = s[decreasingIndex];
@@ -23,14 +23,14 @@ namespace Palindrome
                 if (a == SpaceChar)
                 {
                     increasingIndex++;
-                    reverseIndexCount--;
+                    reverseIndexPosition--;
                     skip = true;
                 }
 
                 if (b == SpaceChar)
                 {
                     decreasingIndex--;
-                    reverseIndexCount--;
+                    reverseIndexPosition--;
                     skip = true;
                 }
 
@@ -45,8 +45,8 @@ namespace Palindrome
                 increasingIndex++;
                 decreasingIndex--;
 
-                forwardIndexCount++;
-                reverseIndexCount--;
+                forwardIndexPosition++;
+                reverseIndexPosition--;
             }
 
             return true;
